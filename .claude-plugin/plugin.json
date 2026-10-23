@@ -1,0 +1,14 @@
+{
+  "name": "warpstream",
+  "version": "0.1.0",
+  "description": "A guided first hour with WarpStream: run the local demo, tour the playground, build against it, learn diskless Kafka, and assess fit, tier and cost.",
+  "author": {
+    "name": "WarpStream",
+    "url": "https://www.warpstream.com"
+  },
+  "homepage": "https://docs.warpstream.com/warpstream",
+  "repository": "https://github.com/jason-warpstream/claude-code-plugin",
+  "license": "Apache-2.0",
+  "privacyPolicyUrl": "https://www.warpstream.com/privacy-policy",
+  "keywords": ["warpstream", "kafka", "diskless-kafka", "streaming", "tableflow", "iceberg", "byoc"]
+}

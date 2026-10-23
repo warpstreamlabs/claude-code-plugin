@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "currency": "USD",
+  "disclaimer": "This is an estimate, not a quote. Prices and assumptions follow the calculator on warpstream.com/pricing, which is authoritative.",
+  "pricing_page_url": "https://www.warpstream.com/pricing?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin",
+
+  "warpstream": {
+    "last_verified": "2026-10-23",
+    "source_url": "https://www.warpstream.com/pricing",
+    "signup_credits_usd": 400,
+    "signup_credits_note": "Non-expiring credits, no credit card required.",
+    "tiers": {
+      "dev": {
+        "label": "Dev",
+        "monthly_cluster_price": 100,
+        "cluster_minutes_per_15min": 0.0345,
+        "uptime_sla": null,
+        "default_max_partitions": 4096,
+        "adds_features": ["mTLS", "Agent Groups", "Cluster Recovery", "Lightning Topics"]
+      },
+      "fundamentals": {
+        "label": "Fundamentals",
+        "monthly_cluster_price": 500,
+        "cluster_minutes_per_15min": 0.1725,
+        "uptime_sla": "99.9%",
+        "default_max_partitions": 16384,
+        "adds_features": ["Topic Recovery", "Broker-Level Schema Validation", "Lower Latency"]
+      },
+      "pro": {
+        "label": "Pro",
+        "monthly_cluster_price": 1500,
+        "cluster_minutes_per_15min": 0.52083,
+        "uptime_sla": "99.99%",
+        "default_max_partitions": 50000,
+        "adds_features": ["PrivateLink", "Audit Logs"]
+      },
+      "enterprise": {
+        "label": "Enterprise",
+        "monthly_cluster_price": null,
+        "cluster_minutes_per_15min": null,
+        "contact_sales": true,
+        "uptime_sla": "99.999% with Multi-Region Clusters (99.99% without)",
+        "default_max_partitions": 200000,
+        "default_max_partitions_note": "200,000+",
+        "adds_features": ["Multi-Region HA Replication", "Dedicated Control Plane Cell"]
+      }
+    },
+    "tier_order": ["dev", "fundamentals", "pro", "enterprise"],
+    "tier_notes": [
+      "Features are cumulative: each tier includes everything in the tiers below it.",
+      "monthly_cluster_price is the tier price the calculator uses for a cluster active all month. Billing is per 15-minute interval with traffic (cluster_minutes_per_15min); idle intervals aren't billed.",
+      "Kafka, Tableflow and Schema Registry clusters each accrue cluster minutes.",
+      "Partition limits can be raised on request."
+    ],
+    "kafka": {
+      "write_tiers_note": "Uncompressed GiB written per month. Each entry is the size of that band; the last is the remainder.",
+      "write_tiers": [
+        { "band_gib": 51200, "price_per_gib": 0.01 },
+        { "band_gib": 256000, "price_per_gib": 0.0075 },
+        { "band_gib": 1280000, "price_per_gib": 0.0055 },
+        { "band_gib": 6400000, "price_per_gib": 0.004 },
+        { "band_gib": null, "price_per_gib": 0.003 }
+      ],
+      "storage_tiers_note": "Uncompressed GiB at rest. The calculator uses these decimal band sizes (50,000 GiB, ...); the published unit-price table lists the bands as 50 TiB, 250 TiB, 500 TiB and 1,000 TiB.",
+      "storage_tiers": [
+        { "band_gib": 50000, "price_per_gib_month": 0.01 },
+        { "band_gib": 250000, "price_per_gib_month": 0.0085 },
+        { "band_gib": 500000, "price_per_gib_month": 0.0075 },
+        { "band_gib": 1000000, "price_per_gib_month": 0.006 },
+        { "band_gib": null, "price_per_gib_month": 0.004 }
+      ]
+    },
+    "tableflow": {
+      "note": "Published unit prices; not part of the website calculator. Covers Tableflow control-plane charges only.",
+      "write_tiers": [
+        { "band_gib": 51200, "price_per_gib": 0.04 },
+        { "band_gib": 256000, "price_per_gib": 0.03 },
+        { "band_gib": 1280000, "price_per_gib": 0.022 },
+        { "band_gib": 6400000, "price_per_gib": 0.016 },
+        { "band_gib": null, "price_per_gib": 0.012 }
+      ],
+      "storage_tiers": [
+        { "band_gib": 51200, "price_per_gib_month": 0.01 },
+        { "band_gib": 256000, "price_per_gib_month": 0.0085 },
+        { "band_gib": 512000, "price_per_gib_month": 0.0075 },
+        { "band_gib": 1024000, "price_per_gib_month": 0.006 },
+        { "band_gib": null, "price_per_gib_month": 0.004 }
+      ]
+    },
+    "schema_registry": {
+      "note": "Schema Registry clusters are billed by cluster minutes only, at the same per-tier rates."
+    },
+    "add_ons_contact_sales": [
+      "Dedicated Single-Tenant Control Plane Cell",
+      "Private Networking",
+      "Self-Managed Control Plane"
+    ],
+    "marketplaces": ["AWS Marketplace", "Google Cloud Marketplace"]
+  },
+
+  "model": {
+    "source_url": "https://www.warpstream.com/pricing",
+    "last_verified": "2026-10-23",
+    "days_per_month": 30,
+    "compression_ratio": 4,
+    "consumer_fanout": 3,
+    "compressed_mibs_per_core": 10,
+    "instance_headroom_factor": 3,
+    "warpstream_min_agents": 3,
+    "warpstream_agent_zones": 3,
+    "kafka_replication_factor": 3,
+    "kafka_ebs_overprovision_factor": 2.5,
+    "kafka_max_ebs_gib_per_broker": 16384,
+    "kafka_network_mibs_per_core": 37.5,
+    "msk_express_network_mibs_per_core": 58,
+    "kafka_network_headroom_factor": 3,
+    "kafka_tiered_hot_retention_min_hours": 24,
+    "kafka_tiered_hot_retention_fraction": 0.1,
+    "partitions_per_compressed_mibs": 0.1,
+    "partition_rounding": 4096,
+    "agent_flushes_per_second": { "regular": 4, "low_latency": 20 },
+    "uncompressed_mib_per_put": { "below_500_mibs": 8, "at_or_above_500_mibs": 16 },
+    "compaction_put_ratio": 0.15,
+    "compaction_get_ratio": 0.15,
+    "assumptions": [
+      "About 10 MiB/s of compressed write throughput per CPU core, for both WarpStream Agents and Kafka brokers.",
+      "4:1 producer compression ratio.",
+      "3x consumer fanout.",
+      "Three availability zone deployments unless stated otherwise; Kafka uses 3x replication.",
+      "30-day month (720 hours). Prices are AWS us-east-1 list prices unless stated otherwise.",
+      "Kafka EBS is provisioned at 40% target utilization, at most 16 TiB per broker, priced at $0.10/GiB-month (GP2 / MSK storage).",
+      "Kafka targets 33% network utilization; minimum broker size r4.xlarge.",
+      "Kafka partition leaders are zone-aligned with producers for 1/3 of writes; without Fetch From Follower, 1/3 of reads are zone-aligned.",
+      "MSK replication traffic between brokers is free.",
+      "WarpStream Agents are zone-aligned for all produce and consume traffic and flush to object storage every 250 ms.",
+      "Reduced operational effort is not priced in."
+    ]
+  },
+
+  "latency_profiles": {
+    "source_url": "https://www.warpstream.com/pricing",
+    "last_verified": "2026-10-23",
+    "note": "Based on WarpStream internal benchmarks; varies with workload and network conditions.",
+    "regular": { "produce_median_ms": 250, "produce_p99_ms": 500, "end_to_end_median_ms": 500, "end_to_end_p99_ms": 900 },
+    "low_latency": { "produce_median_ms": 50, "produce_p99_ms": 76, "end_to_end_median_ms": 180, "end_to_end_p99_ms": 350 }
+  },
+
+  "aws": {
+    "last_verified": "2026-10-23",
+    "verified_against": "warpstream.com/pricing calculator",
+    "region": "us-east-1",
+    "s3": {
+      "source_url": "https://aws.amazon.com/s3/pricing/",
+      "storage_per_gib_month": 0.023,
+      "put_per_request": 0.000005,
+      "get_per_request": 0.0000004
+    },
+    "s3_express": {
+      "source_url": "https://aws.amazon.com/s3/pricing/",
+      "put_per_request": 0.00000226,
+      "get_per_request": 0.00000003,
+      "upload_per_gib": 0.0032,
+      "retrieval_per_gib": 0.0006,
+      "note": "PUT price is 2x the S3 Express One Zone request price (writes go to two zones)."
+    },
+    "inter_zone_per_gib": 0.02,
+    "ebs_per_gib_month": 0.1,
+    "warpstream_agent_instances": [
+      { "instance_type": "m6g.medium", "hourly_price": 0.0385, "cores": 0.5 },
+      { "instance_type": "m6i.large", "hourly_price": 0.096, "cores": 2 },
+      { "instance_type": "m6in.xlarge", "hourly_price": 0.2785, "cores": 4 },
+      { "instance_type": "m6in.2xlarge", "hourly_price": 0.5569, "cores": 8 },
+      { "instance_type": "m6in.4xlarge", "hourly_price": 1.1138, "cores": 16 }
+    ]
+  },
+
+  "comparisons": {
+    "kafka-3-az": {
+      "label": "Kafka (3 AZ)",
+      "description": "Self-hosted Apache Kafka across 3 availability zones",
+      "kind": "brokers",
+      "replication_zones": 3,
+      "supports_tiered_storage": true,
+      "fetch_from_follower_label": "Fetch From Follower",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/ec2/pricing/on-demand/",
+      "brokers": [
+        { "instance_type": "r4.xlarge", "hourly_price": 0.266, "cores": 4, "max_replicated_partitions": 1000 },
+        { "instance_type": "r4.2xlarge", "hourly_price": 0.532, "cores": 8, "max_replicated_partitions": 2000 },
+        { "instance_type": "r4.4xlarge", "hourly_price": 1.064, "cores": 16, "max_replicated_partitions": 4000 }
+      ]
+    },
+    "kafka-1-az": {
+      "label": "Kafka (1 AZ)",
+      "description": "Self-hosted Apache Kafka in a single availability zone",
+      "kind": "brokers",
+      "replication_zones": 1,
+      "single_zone_producers": true,
+      "supports_tiered_storage": true,
+      "fetch_from_follower_label": "Single Zone Consumers",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/ec2/pricing/on-demand/",
+      "brokers_from": "kafka-3-az"
+    },
+    "kafka-msk": {
+      "label": "AWS MSK",
+      "description": "Amazon MSK (Standard brokers)",
+      "kind": "brokers",
+      "replication_zones": 1,
+      "replication_zones_note": "MSK doesn't charge for replication traffic between brokers, so it's modelled as one replication zone.",
+      "supports_tiered_storage": false,
+      "fetch_from_follower_label": "Fetch From Follower",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/msk/pricing/",
+      "brokers": [
+        { "instance_type": "kafka.m5.xlarge", "hourly_price": 0.42, "cores": 4, "max_replicated_partitions": 1000 },
+        { "instance_type": "kafka.m5.2xlarge", "hourly_price": 0.84, "cores": 8, "max_replicated_partitions": 2000 },
+        { "instance_type": "kafka.m5.4xlarge", "hourly_price": 1.68, "cores": 16, "max_replicated_partitions": 4000 }
+      ]
+    },
+    "kafka-msk-express": {
+      "label": "MSK Express",
+      "description": "Amazon MSK Express brokers",
+      "kind": "brokers",
+      "replication_zones": 1,
+      "supports_tiered_storage": false,
+      "fetch_from_follower_label": "Fetch From Follower",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/msk/pricing/",
+      "storage_per_gib_month": 0.1,
+      "data_in_per_compressed_gib": 0.01,
+      "brokers": [
+        { "instance_type": "express.m7g.large", "hourly_price": 0.408, "cores": 2, "max_replicated_partitions": 1000 },
+        { "instance_type": "express.m7g.4xlarge", "hourly_price": 3.264, "cores": 16, "max_replicated_partitions": 2000 },
+        { "instance_type": "express.m7g.16xlarge", "hourly_price": 13.056, "cores": 64, "max_replicated_partitions": 4000 }
+      ]
+    },
+    "kafka-msk-serverless": {
+      "label": "MSK Serverless",
+      "description": "Amazon MSK Serverless",
+      "kind": "msk-serverless",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/msk/pricing/",
+      "cluster_hourly": 0.75,
+      "partition_hourly": 0.0015,
+      "write_per_compressed_gib": 0.1,
+      "read_per_compressed_gib": 0.05,
+      "storage_per_compressed_gib_month": 0.1
+    },
+    "kafka-kinesis": {
+      "label": "Kinesis",
+      "description": "Amazon Kinesis Data Streams (provisioned mode)",
+      "kind": "kinesis",
+      "not_kafka_compatible": true,
+      "migration_note": "Kinesis isn't Kafka-compatible, so moving to or from it means changing client code, not just configuration.",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://aws.amazon.com/kinesis/data-streams/pricing/",
+      "shards_per_uncompressed_mibs": 2,
+      "shard_hourly": 0.015,
+      "put_payload_unit_kib": 25,
+      "put_per_million_units": 0.014,
+      "enhanced_fanout_per_gib": 0.013,
+      "enhanced_fanout_consumers": 1,
+      "enhanced_fanout_shard_hourly": 0.015,
+      "extended_retention_shard_hourly": 0.02,
+      "extended_retention_after_days": 1,
+      "long_term_retention_per_gib_month": 0.023,
+      "long_term_retention_after_days": 7
+    },
+    "gcp-msk": {
+      "label": "GCP MSK",
+      "description": "Google Cloud Managed Service for Apache Kafka",
+      "kind": "brokers",
+      "replication_zones": 3,
+      "supports_tiered_storage": true,
+      "requires_tiered_storage": true,
+      "fetch_from_follower_label": "Fetch From Follower",
+      "last_verified": "2026-10-23",
+      "verified_against": "warpstream.com/pricing calculator",
+      "source_url": "https://cloud.google.com/managed-service-for-apache-kafka/pricing",
+      "inter_zone_per_gib": 0.01,
+      "local_storage_per_gib_month": 0.17,
+      "tiered_storage_per_gib_month": 0.1,
+      "local_storage_gib_per_core": 100,
+      "brokers": [
+        { "instance_type": "vCPU (DCU)", "hourly_price": 0.09, "cores": 1, "max_replicated_partitions": 1000 }
+      ]
+    },
+    "redpanda": {
+      "label": "Redpanda",
+      "kind": "no-public-pricing",
+      "last_verified": "2026-10-23",
+      "source_url": "https://www.redpanda.com/pricing",
+      "note": "Redpanda doesn't publish its rates; its pricing page leads to a contact form. A cost comparison isn't possible.",
+      "compare_url": "https://www.warpstream.com/compare/warpstream-vs-redpanda?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin"
+    }
+  },
+  "comparison_order": ["kafka-3-az", "kafka-1-az", "kafka-msk", "kafka-msk-express", "kafka-msk-serverless", "kafka-kinesis", "gcp-msk"]
+}

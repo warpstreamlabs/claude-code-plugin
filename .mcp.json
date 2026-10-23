@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "warpstream-docs": {
+      "type": "http",
+      "url": "https://docs.warpstream.com/warpstream/~gitbook/mcp"
+    }
+  }
+}

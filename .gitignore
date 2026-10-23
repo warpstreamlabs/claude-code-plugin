@@ -1,0 +1,8 @@
+# Internal planning doc; not for the public repo
+PLAN.md
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+warpstream-assessment-*.md
