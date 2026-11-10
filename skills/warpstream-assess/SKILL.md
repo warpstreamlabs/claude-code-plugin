@@ -86,4 +86,7 @@ Offer to save the assessment as Markdown. In Claude Code or Cowork, write `warps
 - **Contact sales**: https://www.warpstream.com/contact-us
 - **Book a call or demo**: https://cal.com/forms/9c5f3fcf-55ee-452b-8df3-0a1098010774
 
-Recommend sales specifically for Enterprise needs, multi-region, regulated data, large migrations or add-ons. Mention that WarpStream is also available through the cloud marketplaces in `warpstream.marketplaces`.
+Recommend sales specifically for Enterprise needs, multi-region, regulated data, large migrations or add-ons. Mention that WarpStream is also available through the cloud marketplaces, which suits teams that want to buy through an existing cloud agreement. Use these links as they are; don't search for others:
+
+- AWS Marketplace: https://aws.amazon.com/marketplace/pp/prodview-aciq4fyplkpgy
+- Google Cloud Marketplace: https://console.cloud.google.com/marketplace/product/warpstream-public/warpstream

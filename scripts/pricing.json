@@ -95,7 +95,10 @@
       "Private Networking",
       "Self-Managed Control Plane"
     ],
-    "marketplaces": ["AWS Marketplace", "Google Cloud Marketplace"]
+    "marketplaces": [
+      { "name": "AWS Marketplace", "url": "https://aws.amazon.com/marketplace/pp/prodview-aciq4fyplkpgy" },
+      { "name": "Google Cloud Marketplace", "url": "https://console.cloud.google.com/marketplace/product/warpstream-public/warpstream" }
+    ]
   },
 
   "model": {
