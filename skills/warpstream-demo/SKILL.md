@@ -26,14 +26,22 @@ Both are rate-limited, ephemeral and unsuitable for benchmarks. For CI, the docs
 ## 2. Run it
 
 - Ask which mode they want if it isn't clear; default to `demo` for a first look and `playground` when they want to write code.
-- In Claude Code, run the command **in the background** (it runs until its timeout or until stopped) and read its output: `warpstream demo` or `warpstream playground`. Add flags only when needed (`-kafkaPort`, `-timeout`). Check `-h` for the default timeout and tell the user when it will stop.
+- **Choose the timeout before starting.** Each mode stops itself after `-timeout`; check `-h` for the defaults (at the time of writing, 1 hour for demo and 4 hours for playground). The timeout can't be extended once running, so set it up front: keep the default for a quick look, and if the user plans a longer session (several exercises, building an app), pass a longer value such as `-timeout 6h`. The temporary account itself can expire sooner (the docs give 12 hours for demo accounts and "a few hours" for playground), so don't promise more than the default.
+- In Claude Code, run the command **in the background** (it runs until its timeout or until stopped) and read its output: `warpstream demo` or `warpstream playground`. Add flags only when needed (ports, `-timeout`). Note the exact command and flags you used; you need them to restart.
 - Without a shell (for example in Claude chat), give the user the exact command to run in their terminal and ask them to paste the output.
 - Wait for the startup output, then confirm the cluster is reachable:
   `warpstream kcmd -type diagnose-connection -bootstrap-host localhost -bootstrap-port 9092`
+- **Work out when it stops.** The CLI prints the timeout at startup ("will shutdown automatically after: ..."). Add it to the start time (`date`) to get a clock time in the user's timezone.
 
 ## 3. Orient the user
 
-Always do this once the cluster is up, before moving on (even if the user asked you to stop it straight afterwards). Use what the CLI actually printed (console link, ports, topic name, Tableflow table) rather than assuming. Explain briefly:
+Always do this once the cluster is up, before moving on (even if the user asked you to stop it straight afterwards). Use what the CLI actually printed (console link, ports, topic name, Tableflow table) rather than assuming.
+
+**Lead with when it stops**, on its own line, before anything else. For example:
+
+> **This playground runs until 3:40 pm (4 hours).** After that it stops and its data is gone; I can restart it if you're not done.
+
+Then explain briefly:
 
 - A temporary account was created; the console link in the output logs into it. That link contains a session key: tell the user to open it but not share it. If the printed link starts with `https:/` (one slash), give it with `https://`.
 - A Kafka-compatible endpoint is at `localhost:<Kafka port>` (default `localhost:9092`). Any Kafka client or tool can use it as the bootstrap server.
@@ -43,7 +51,18 @@ Always do this once the cluster is up, before moving on (even if the user asked 
 
 Then offer one next step: the guided tour (`/warpstream-tour`), writing a client (`warpstream-clients`), or the exercises.
 
-## 4. Troubleshoot
+**While it's running:** whenever you run something against the cluster, check the time. If less than 15 minutes remain, say so in one sentence and offer to wrap up or restart afterwards. Don't start a long exercise that won't finish in time without saying so.
+
+## 4. Restart after it stops
+
+Signs it has stopped: the background task has ended, the CLI printed a shutdown message, or clients get connection refused on the Kafka port. When that happens:
+
+1. Tell the user it reached its time limit (or stopped for another reason the output shows) and what a restart means: a **new temporary account** with an empty cluster. Topics, records, schemas, topic configs, Tableflow tables and console settings are gone. Files in their working directory (client code, schemas, the saved setup in `warpstream-playground/`) are not.
+2. With their OK, start it again with the same command, flags and environment variables you used before (ports, `-timeout`, `WARPSTREAM_SCHEMA_REGISTRY_URL` if exercise 2 set it), or from `warpstream-playground/start.sh` if the exercises saved one. Choose a longer timeout if they're mid-way through the exercises.
+3. Rebuild their state: follow "Restore after a restart" in the `warpstream-exercises` skill, which reruns the saved setup scripts in order.
+4. Orient briefly: the new stop time first, then the new console link (the old one no longer works) and anything that has to be redone by hand in the console.
+
+## 5. Troubleshoot
 
 | Symptom | What to do |
 |---|---|
@@ -54,7 +73,7 @@ Then offer one next step: the guided tour (`/warpstream-tour`), writing a client
 | Signup or control-plane errors | Check outbound HTTPS access to `*.warpstream.com`; corporate proxies are the usual cause. `warpstream local` works offline but has no console |
 | Anything else | Search the docs MCP with the exact error message |
 
-## 5. Stop cleanly
+## 6. Stop cleanly
 
 When the user is done (or runs `/warpstream-stop`):
 
