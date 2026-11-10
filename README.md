@@ -26,6 +26,7 @@ claude --plugin-dir .
 | `/warpstream-tour` | Walks through what the demo creates: Kafka cluster, Schema Registry, Tableflow, console |
 | `/warpstream-assess` | Short fit assessment: tier recommendation, cost estimate and platform comparison, migration outline, exported as Markdown |
 | `/warpstream-stop` | Stops the local demo or playground cleanly |
+| `/warpstream-summary` | Summarizes what you've done (what you ran, concepts, exercises, cost assessment, next steps) in the terminal or as a Markdown file |
 
 You can also just ask, for example "help me get started with WarpStream" or "how does diskless Kafka work?".
 

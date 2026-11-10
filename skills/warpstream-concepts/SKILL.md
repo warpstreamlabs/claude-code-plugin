@@ -49,3 +49,9 @@ For architectural comparisons, use WarpStream's comparison pages and link them:
 For "diskless topics" in other products (KIP-1150-style designs), the diskless-kafka page explains the difference between a diskless topic type inside a classic cluster and a fully diskless cluster. Be fair: describe what each design is good at.
 
 For costs, hand off to `warpstream-assess`.
+
+## Progress log
+
+**Progress log:** if `warpstream-playground/PROGRESS.md` exists in the working directory, or a demo or playground was started in this session, add a line under its `## Log` heading: `- <YYYY-MM-DD HH:MM> — <Area>: <what> — <one-line takeaway or result>`. If the file doesn't exist yet, create it with the headings `# WarpStream progress`, `## Exercises`, `## Manual console steps to redo after a restart` and `## Log`. Don't create it just for a one-off question. `warpstream-summary` reads this log.
+
+Log: each topic you explained, with the one-line takeaway (for example, whether the default latency fits their use case).

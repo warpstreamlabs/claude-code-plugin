@@ -42,3 +42,9 @@ Walk through the console pages that matter for evaluation, using the account lin
 ## Wrap up
 
 Offer one next step based on what they found most interesting: the hands-on exercises (`warpstream-exercises`), writing their own client (`warpstream-clients`), or a cost and fit assessment (`/warpstream-assess`).
+
+## Progress log
+
+**Progress log:** if `warpstream-playground/PROGRESS.md` exists in the working directory, or a demo or playground was started in this session, add a line under its `## Log` heading: `- <YYYY-MM-DD HH:MM> — <Area>: <what> — <one-line takeaway or result>`. If the file doesn't exist yet, create it with the headings `# WarpStream progress`, `## Exercises`, `## Manual console steps to redo after a restart` and `## Log`. Don't create it just for a one-off question. `warpstream-summary` reads this log.
+
+Log: each stop the user went through, with what they found most useful.

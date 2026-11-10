@@ -6,3 +6,5 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 warpstream-assessment-*.md
+warpstream-summary-*.md
+warpstream-playground/

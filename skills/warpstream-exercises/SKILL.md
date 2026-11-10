@@ -26,14 +26,14 @@ warpstream-playground/
 │   └── ...             # one script per exercise, run in filename order
 ├── tableflow.yaml      # console-only configuration, to paste back in after a restart
 ├── orbit.yaml
-└── PROGRESS.md         # exercises done, plus any manual console steps to redo
+└── PROGRESS.md         # exercises done, manual console steps to redo, and the log warpstream-summary reads
 ```
 
 - Write each `setup/` script **as you do the exercise**, containing only the steps that change the cluster: creating topics (with their configs), registering schemas, seeding records, creating consumer groups. Leave out one-off checks such as fetching records or showing a rejection.
 - Make scripts safe to rerun: tolerate "already exists" errors, and read ports from environment variables with the defaults (`KAFKA_PORT=${KAFKA_PORT:-9092}`, `SR_PORT=${SR_PORT:-9094}`). Use `warpstream kcmd` and `curl` where they're enough; where they aren't (for example, creating a topic with configs), use a small script in the language of the user's client code.
 - Steps that happen in the console (Tableflow tables, Orbit configuration) can't be scripted from here. Save the configuration you used to a file, and list the manual step in `PROGRESS.md`.
 - Update `start.sh` whenever the start command changes, for example when exercise 2 adds `WARPSTREAM_SCHEMA_REGISTRY_URL`.
-- After each exercise, tick it off in `PROGRESS.md`.
+- `PROGRESS.md` has the headings `# WarpStream progress`, `## Exercises`, `## Manual console steps to redo after a restart` and `## Log` (create them if the file doesn't exist; other WarpStream skills write to it too). After each exercise, tick it off under `## Exercises`, and add a line under `## Log`: `- <YYYY-MM-DD HH:MM> — Exercise <n>: <name> — <what it showed>`.
 
 ## Restore after a restart
 

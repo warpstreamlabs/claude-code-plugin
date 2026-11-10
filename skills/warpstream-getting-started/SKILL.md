@@ -31,6 +31,7 @@ Adjust depth to the persona: skip Kafka basics for experienced users; define ter
 
 - Prefer doing over explaining: get the demo running early, then explain what they're looking at.
 - After each step, offer the next one in a single sentence rather than a menu of everything.
+- When they're wrapping up, offer a summary of everything they've done (`/warpstream-summary`), for themselves or to share with their team.
 - At natural stopping points (they've produced and consumed, or finished an assessment), mention the next steps:
   - Sign up for a real account: https://console.warpstream.com/signup (new accounts come with free credits; `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json` has the current amount under `warpstream.signup_credits_usd`).
   - Talk to the team: https://www.warpstream.com/contact-us

@@ -81,6 +81,12 @@ When the user is done (or runs `/warpstream-stop`):
 2. Confirm the ports are free again (they free up within seconds of SIGINT).
 3. Remind them that in-memory data is gone and the temporary account will expire. If they want to keep going, the next step is a real account: https://console.warpstream.com/signup
 
+## Progress log
+
+**Progress log:** if `warpstream-playground/PROGRESS.md` exists in the working directory, or a demo or playground was started in this session, add a line under its `## Log` heading: `- <YYYY-MM-DD HH:MM> — <Area>: <what> — <one-line takeaway or result>`. If the file doesn't exist yet, create it with the headings `# WarpStream progress`, `## Exercises`, `## Manual console steps to redo after a restart` and `## Log`. Don't create it just for a one-off question. `warpstream-summary` reads this log.
+
+Log: each start or restart (mode, ports if not default, stop time), each stop, and any startup problem and its fix.
+
 ## Rules
 
 - Never install software, stop processes you didn't start, or change shell profiles without asking.
