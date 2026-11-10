@@ -5,7 +5,7 @@ description: Explain how WarpStream and diskless Kafka work — stateless Agents
 
 # Diskless Kafka, explained
 
-Primary source: the diskless Kafka page. Fetch `https://www.warpstream.com/diskless-kafka` (and the docs MCP architecture pages: "Write Path", "Read Path", "Service Discovery") when the user wants detail or when you need a specific figure. Don't quote numbers from memory. When you link the page for the user, use https://www.warpstream.com/diskless-kafka?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
+Primary source: the diskless Kafka page. Fetch `https://www.warpstream.com/diskless-kafka` (and the docs MCP architecture pages: "Write Path", "Read Path", "Service Discovery") when the user wants detail or when you need a specific figure. Don't quote numbers from memory.
 
 Match depth to the user. Newcomers get the one-paragraph version and a diagram in words; experienced Kafka users get the comparison with classic brokers and the trade-offs.
 
@@ -43,11 +43,9 @@ Say so plainly when it applies:
 
 For architectural comparisons, use WarpStream's comparison pages and link them:
 
-- MSK: https://www.warpstream.com/compare/warpstream-vs-amazon-msk?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
-- Redpanda: https://www.warpstream.com/compare/warpstream-vs-redpanda?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
+- MSK: https://www.warpstream.com/compare/warpstream-vs-amazon-msk
+- Redpanda: https://www.warpstream.com/compare/warpstream-vs-redpanda
 
 For "diskless topics" in other products (KIP-1150-style designs), the diskless-kafka page explains the difference between a diskless topic type inside a classic cluster and a fully diskless cluster. Be fair: describe what each design is good at.
 
 For costs, hand off to `warpstream-assess`.
-
-Links you give the user to warpstream.com or docs.warpstream.com end with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&...` if the URL already has a query string). URLs you fetch yourself don't.

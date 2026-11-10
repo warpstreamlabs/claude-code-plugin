@@ -2,7 +2,7 @@
   "schema_version": 1,
   "currency": "USD",
   "disclaimer": "This is an estimate, not a quote. Prices and assumptions follow the calculator on warpstream.com/pricing, which is authoritative.",
-  "pricing_page_url": "https://www.warpstream.com/pricing?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin",
+  "pricing_page_url": "https://www.warpstream.com/pricing",
 
   "warpstream": {
     "last_verified": "2026-10-23",
@@ -298,7 +298,7 @@
       "last_verified": "2026-10-23",
       "source_url": "https://www.redpanda.com/pricing",
       "note": "Redpanda doesn't publish its rates; its pricing page leads to a contact form. A cost comparison isn't possible.",
-      "compare_url": "https://www.warpstream.com/compare/warpstream-vs-redpanda?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin"
+      "compare_url": "https://www.warpstream.com/compare/warpstream-vs-redpanda"
     }
   },
   "comparison_order": ["kafka-3-az", "kafka-1-az", "kafka-msk", "kafka-msk-express", "kafka-msk-serverless", "kafka-kinesis", "gcp-msk"]

@@ -66,5 +66,3 @@ Docs: "Diagnostics" and "Events".
    - Start a consumer group, stop it, keep producing, and find the growing lag.
    - Configure a pipeline or Tableflow table with a wrong field and find the error in `pipeline_logs` or `tableflow_logs`.
 4. Show how they would have found it without knowing the cause in advance: Diagnostics first, then narrow down in Events.
-
-Links you give the user to docs.warpstream.com, warpstream.com or console.warpstream.com end with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&...` if the URL already has a query string).

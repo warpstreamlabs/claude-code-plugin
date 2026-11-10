@@ -1,6 +1,6 @@
 # WarpStream plugin for Claude
 
-A guided first hour with [WarpStream](https://www.warpstream.com/?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin) without leaving Claude: run the local demo, tour the playground, build against it, learn how diskless Kafka works, and get a tier recommendation and cost estimate.
+A guided first hour with [WarpStream](https://www.warpstream.com/) without leaving Claude: run the local demo, tour the playground, build against it, learn how diskless Kafka works, and get a tier recommendation and cost estimate.
 
 ## Install
 
@@ -33,7 +33,7 @@ The plugin connects Claude to the public WarpStream docs through the `warpstream
 
 ### Cost estimates
 
-`scripts/estimate.py` reproduces the calculator on [warpstream.com/pricing](https://www.warpstream.com/pricing?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin) using the prices in `scripts/pricing.json`. Estimates are not quotes; the pricing page is authoritative.
+`scripts/estimate.py` reproduces the calculator on [warpstream.com/pricing](https://www.warpstream.com/pricing) using the prices in `scripts/pricing.json`. Estimates are not quotes; the pricing page is authoritative.
 
 ## Development
 

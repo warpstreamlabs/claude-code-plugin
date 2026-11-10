@@ -32,11 +32,10 @@ Adjust depth to the persona: skip Kafka basics for experienced users; define ter
 - Prefer doing over explaining: get the demo running early, then explain what they're looking at.
 - After each step, offer the next one in a single sentence rather than a menu of everything.
 - At natural stopping points (they've produced and consumed, or finished an assessment), mention the next steps:
-  - Sign up for a real account: https://console.warpstream.com/signup?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin (new accounts come with free credits; `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json` has the current amount under `warpstream.signup_credits_usd`).
-  - Talk to the team: https://www.warpstream.com/contact-us?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
+  - Sign up for a real account: https://console.warpstream.com/signup (new accounts come with free credits; `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json` has the current amount under `warpstream.signup_credits_usd`).
+  - Talk to the team: https://www.warpstream.com/contact-us
 
 ## Sources of truth
 
 - Product facts come from the `warpstream-docs` MCP server (`searchDocumentation`, `getPage`, `askQuestion`) and warpstream.com. Look things up rather than relying on memory; WarpStream changes quickly.
 - Prices, tier features and limits come from `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json`, never from memory.
-- Every warpstream.com, docs.warpstream.com, console.warpstream.com or cal.com link you give the user must end with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&utm_source=...` if the URL already has a query string). Don't add these parameters to MCP endpoints, `install.sh`, API URLs or URLs you fetch yourself.

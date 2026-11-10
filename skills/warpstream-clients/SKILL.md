@@ -51,5 +51,3 @@ Then run it (in Claude Code) or give the commands, and confirm records arrive: t
 
 - In production, clients connect to Agents in their own availability zone; encoding the zone in the client ID (`ws_az=...`) avoids inter-zone networking charges. Link the AZ page above.
 - Real clusters use SASL or mTLS; the console's Connect tab shows the bootstrap URL and credentials.
-
-Links you give the user to docs.warpstream.com, warpstream.com or console.warpstream.com end with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&...` if the URL already has a query string). URLs you fetch through the MCP don't.

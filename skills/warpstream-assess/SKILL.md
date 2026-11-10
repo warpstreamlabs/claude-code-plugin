@@ -50,12 +50,12 @@ Present the result:
 - Always show: the WarpStream total split into **data plane** (paid to their cloud provider: Agent VMs, object storage) and **control plane** (paid to WarpStream), the comparison totals, the key assumptions, the `last_verified` date, that it's an estimate not a quote, and the pricing page link (`pricing_page_url` in the output).
 - Pass on any `notes` from the output (for example partitions above a tier's default limit).
 - For Kinesis, say migration means changing client code (it isn't Kafka-compatible).
-- If the script can't run in this environment, don't calculate prices by hand. Link the calculator at https://www.warpstream.com/pricing?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin and offer to explain the inputs.
+- If the script can't run in this environment, don't calculate prices by hand. Link the calculator at https://www.warpstream.com/pricing and offer to explain the inputs.
 
 ### Competitive context
 
-- MSK: also link https://www.warpstream.com/compare/warpstream-vs-amazon-msk?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
-- **Redpanda**: Redpanda doesn't publish its rates (see the `redpanda` entry in pricing.json and its `last_verified` date), so a cost comparison isn't possible. Say that, link https://www.warpstream.com/compare/warpstream-vs-redpanda?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin, and offer to estimate the WarpStream side.
+- MSK: also link https://www.warpstream.com/compare/warpstream-vs-amazon-msk
+- **Redpanda**: Redpanda doesn't publish its rates (see the `redpanda` entry in pricing.json and its `last_verified` date), so a cost comparison isn't possible. Say that, link https://www.warpstream.com/compare/warpstream-vs-redpanda, and offer to estimate the WarpStream side.
 - Confluent or other platforms not in the estimator: say they aren't in the calculator; don't invent prices. Offer the WarpStream estimate and suggest sales for a like-for-like comparison.
 
 Be fair: list prices, visible assumptions, documented sources. If WarpStream comes out more expensive for their inputs, say so.
@@ -82,10 +82,8 @@ Offer to save the assessment as Markdown. In Claude Code or Cowork, write `warps
 
 ## 6. Next steps (always offer all three)
 
-- **Start self-serve**: sign up at https://console.warpstream.com/signup?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin. New accounts get free credits with no credit card required (amount and terms: `warpstream.signup_credits_usd` and `signup_credits_note` in pricing.json).
-- **Contact sales**: https://www.warpstream.com/contact-us?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
-- **Book a call or demo**: https://cal.com/forms/9c5f3fcf-55ee-452b-8df3-0a1098010774?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin
+- **Start self-serve**: sign up at https://console.warpstream.com/signup. New accounts get free credits with no credit card required (amount and terms: `warpstream.signup_credits_usd` and `signup_credits_note` in pricing.json).
+- **Contact sales**: https://www.warpstream.com/contact-us
+- **Book a call or demo**: https://cal.com/forms/9c5f3fcf-55ee-452b-8df3-0a1098010774
 
 Recommend sales specifically for Enterprise needs, multi-region, regulated data, large migrations or add-ons. Mention that WarpStream is also available through the cloud marketplaces in `warpstream.marketplaces`.
-
-Every link you give the user to warpstream.com, docs.warpstream.com, console.warpstream.com or cal.com ends with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&...` if the URL already has a query string).

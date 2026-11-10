@@ -42,5 +42,3 @@ Walk through the console pages that matter for evaluation, using the account lin
 ## Wrap up
 
 Offer one next step based on what they found most interesting: the hands-on exercises (`warpstream-exercises`), writing their own client (`warpstream-clients`), or a cost and fit assessment (`/warpstream-assess`).
-
-Links you give the user to warpstream.com, docs.warpstream.com or console.warpstream.com end with `?utm_source=claude&utm_medium=claude&utm_campaign=claude-plugin` (or `&...` if the URL already has a query string).

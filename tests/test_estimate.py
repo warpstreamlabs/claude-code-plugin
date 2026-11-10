@@ -132,7 +132,8 @@ class Behaviour(unittest.TestCase):
     def test_redpanda_has_no_price(self):
         r = estimate.estimate(compare=["redpanda"], pricing=PRICING)
         self.assertIsNone(r["comparisons"][0]["total"])
-        self.assertIn("utm_source=claude", r["comparisons"][0]["compare_url"])
+        self.assertEqual(r["comparisons"][0]["compare_url"],
+                         "https://www.warpstream.com/compare/warpstream-vs-redpanda")
 
     def test_write_tier_boundaries(self):
         tiers = PRICING["warpstream"]["kafka"]["write_tiers"]
