@@ -79,7 +79,8 @@ When the user is done (or runs `/warpstream-stop`):
 
 1. Stop the demo or playground process you started: stop the background task, or send SIGINT (Ctrl-C). Processes started in the background may ignore SIGINT; if it's still running a few seconds later, send SIGTERM (it shuts down cleanly and deletes its temporary session). If you didn't start it, find it with `pgrep -lf '^(.*/)?warpstream (demo|playground|local)'` (anchored, so it doesn't match the shell that launched it) and confirm with the user before stopping it.
 2. Confirm the ports are free again (they free up within seconds of SIGINT).
-3. Remind them that in-memory data is gone and the temporary account will expire. If they want to keep going, the next step is a real account: https://console.warpstream.com/signup
+3. Remind them that in-memory data is gone and the temporary account will expire. If they want to keep going, the next step is a real account: https://console.warpstream.com/signup, then their first cluster in their own cloud (`warpstream-deploy`).
+4. If they say they're finished with WarpStream altogether, offer the cleanup steps in "Uninstall and clean up" in `${CLAUDE_PLUGIN_ROOT}/README.md` (CLI, Docker image, files the plugin wrote, and removing the plugin), and ask before deleting anything.
 
 ## Progress log
 

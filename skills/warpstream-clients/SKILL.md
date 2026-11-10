@@ -1,6 +1,6 @@
 ---
 name: warpstream-clients
-description: Write or configure Kafka producer and consumer code for WarpStream in Python, Java, Go or Node.js with WarpStream's recommended client settings, or point an existing project at a local WarpStream cluster. Use when the user wants sample code, asks how to connect a Kafka client or app to WarpStream, or asks about client settings, throughput tuning, idempotence or client IDs for WarpStream.
+description: Write or configure Kafka producer and consumer code for WarpStream in Python, Java, Go or Node.js with WarpStream's recommended client settings, or point an existing project or Kafka tool (Kafka Connect, Flink, Spark, kcat, a Kafka UI, and others) at a local WarpStream cluster. Use when the user wants sample code, asks how to connect a Kafka client or app to WarpStream, asks how to use an existing Kafka tool or integration with WarpStream, or asks about client settings, throughput tuning, idempotence or client IDs for WarpStream.
 ---
 
 # Kafka clients for WarpStream
@@ -47,7 +47,16 @@ Then run it (in Claude Code) or give the commands, and confirm records arrive: t
 3. Keep their existing serializers; if they use a schema registry, point it at the local Schema Registry port (default 9094).
 4. Suggest the recommended tuning settings, but separate "needed to connect" from "recommended for throughput" so it's clear what's optional.
 
-## 5. Production notes (mention briefly, don't over-explain)
+## 5. Existing tools and integrations
+
+Users often want to point a tool they already use at WarpStream rather than write code.
+
+1. Check the integrations index with the docs MCP (`getPage` https://docs.warpstream.com/warpstream/reference/integrations). It lists tools with a WarpStream-specific page (stream processors, UIs, ETL services and others). If the tool is there, follow its page.
+2. For Kafka Connect and connectors, see the docs' "Manage Connectors" section; WarpStream also runs managed data pipelines inside the Agents, which may replace a separate Connect cluster.
+3. For any other Kafka-compatible tool (kcat, Kafka CLI tools, UIs, Flink or Spark Kafka connectors), the bootstrap server is all it needs for the local cluster: `localhost:9092` (or the port the CLI printed), `PLAINTEXT`, and the Schema Registry URL if the tool uses one (default `http://localhost:9094`). Apply the recommended client settings from step 1 where the tool exposes them.
+4. Check "Protocol and Feature Support" if the tool relies on something specific (transactions, compacted topics, a particular API).
+
+## 6. Production notes (mention briefly, don't over-explain)
 
 - In production, clients connect to Agents in their own availability zone; encoding the zone in the client ID (`ws_az=...`) avoids inter-zone networking charges. Link the AZ page above.
 - Real clusters use SASL or mTLS; the console's Connect tab shows the bootstrap URL and credentials.

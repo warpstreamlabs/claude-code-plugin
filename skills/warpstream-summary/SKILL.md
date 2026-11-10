@@ -34,6 +34,8 @@ Use these sections, in this order, skipping any that are empty:
    - Contact sales: https://www.warpstream.com/contact-us
    - Book a call or demo: https://cal.com/forms/9c5f3fcf-55ee-452b-8df3-0a1098010774
    - Buy through a cloud marketplace: AWS Marketplace (https://aws.amazon.com/marketplace/pp/prodview-aciq4fyplkpgy) or Google Cloud Marketplace (https://console.cloud.google.com/marketplace/product/warpstream-public/warpstream)
+   - Deploy a first real cluster in their own cloud (offer the `warpstream-deploy` skill), if they haven't yet
+   - Questions and feedback: WarpStream's community Slack, https://console.warpstream.com/socials/slack
    - Unfinished exercises, if `PROGRESS.md` lists any
 
 Write it so the user can forward it to a colleague who wasn't in the conversation: no references to "above" or "earlier in this chat", and no session keys or console login links.

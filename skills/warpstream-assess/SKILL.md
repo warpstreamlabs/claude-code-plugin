@@ -91,6 +91,8 @@ Recommend sales specifically for Enterprise needs, multi-region, regulated data,
 - AWS Marketplace: https://aws.amazon.com/marketplace/pp/prodview-aciq4fyplkpgy
 - Google Cloud Marketplace: https://console.cloud.google.com/marketplace/product/warpstream-public/warpstream
 
+For questions or feedback, point them to WarpStream's community Slack: https://console.warpstream.com/socials/slack. Once they have an account, offer to help deploy their first real cluster (`warpstream-deploy`).
+
 ## Progress log
 
 **Progress log:** if `warpstream-playground/PROGRESS.md` exists in the working directory, or a demo or playground was started in this session, add a line under its `## Log` heading: `- <YYYY-MM-DD HH:MM> — <Area>: <what> — <one-line takeaway or result>`. If the file doesn't exist yet, create it with the headings `# WarpStream progress`, `## Exercises`, `## Manual console steps to redo after a restart` and `## Log`. Don't create it just for a one-off question. `warpstream-summary` reads this log.

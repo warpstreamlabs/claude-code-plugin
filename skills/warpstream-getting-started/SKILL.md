@@ -24,6 +24,7 @@ Don't run a questionnaire. Infer what you can from the answer and from the conve
 | "Planning a migration" | Platform engineer | `warpstream-assess` (it covers config translation, Orbit, Schema Linking) | `warpstream-demo` + the Orbit exercise as a rehearsal |
 | "Iceberg", "data lake", "Tableflow", "schemas" | Data engineer | `warpstream-demo`, then the Tableflow and schema exercises in `warpstream-exercises` | `warpstream-assess` |
 | "How much would this cost?" | Any | `warpstream-assess` | `warpstream-demo` |
+| "I've signed up", "deploy it in our AWS/GCP/Azure" | Any, ready for a real cluster | `warpstream-deploy` | `warpstream-clients` |
 
 Adjust depth to the persona: skip Kafka basics for experienced users; define terms (topic, partition, consumer group) for newcomers the first time they come up.
 
@@ -35,6 +36,8 @@ Adjust depth to the persona: skip Kafka basics for experienced users; define ter
 - At natural stopping points (they've produced and consumed, or finished an assessment), mention the next steps:
   - Sign up for a real account: https://console.warpstream.com/signup (new accounts come with free credits; `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json` has the current amount under `warpstream.signup_credits_usd`).
   - Talk to the team: https://www.warpstream.com/contact-us
+  - Ask questions or share feedback in WarpStream's community Slack: https://console.warpstream.com/socials/slack
+- Once they have an account, offer to help deploy their first real cluster in their own cloud (`warpstream-deploy`).
 
 ## Sources of truth
 
