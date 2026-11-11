@@ -91,4 +91,4 @@ node tests/website_harness.mjs > tests/fixtures/website_reference.json
 
 ## License
 
-Apache-2.0 (see [LICENSE](LICENSE)).
+MIT (see [LICENSE](LICENSE)).
