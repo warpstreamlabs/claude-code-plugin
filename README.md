@@ -7,7 +7,7 @@ A guided first hour with [WarpStream](https://www.warpstream.com/) without leavi
 In Claude Code:
 
 ```
-/plugin marketplace add jason-warpstream/claude-code-plugin
+/plugin marketplace add warpstreamlabs/claude-code-plugin
 /plugin install warpstream@warpstream
 ```
 

@@ -7,7 +7,7 @@
     "url": "https://www.warpstream.com"
   },
   "homepage": "https://docs.warpstream.com/warpstream",
-  "repository": "https://github.com/jason-warpstream/claude-code-plugin",
+  "repository": "https://github.com/warpstreamlabs/claude-code-plugin",
   "license": "MIT",
   "privacyPolicyUrl": "https://www.warpstream.com/privacy-policy",
   "keywords": ["warpstream", "kafka", "diskless-kafka", "streaming", "tableflow", "iceberg", "byoc"]
