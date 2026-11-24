@@ -41,5 +41,5 @@ Adjust depth to the persona: skip Kafka basics for experienced users; define ter
 
 ## Sources of truth
 
-- Product facts come from the `warpstream-docs` MCP server (`searchDocumentation`, `getPage`, `askQuestion`) and warpstream.com. Look things up rather than relying on memory; WarpStream changes quickly.
+- Product facts come from the `warpstream-docs` MCP server (`search` to find pages, `fetch` to read one in full) and warpstream.com. Look things up rather than relying on memory; WarpStream changes quickly.
 - Prices, tier features and limits come from `${CLAUDE_PLUGIN_ROOT}/scripts/pricing.json`, never from memory.

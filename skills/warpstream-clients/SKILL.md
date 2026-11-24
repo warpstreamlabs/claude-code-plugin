@@ -11,9 +11,9 @@ WarpStream speaks the Kafka protocol, so standard Kafka clients work unchanged: 
 
 The recommended values change over time, so don't write them from memory. Fetch the page with the `warpstream-docs` MCP:
 
-- `getPage` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/tuning-for-performance (per-client settings tables)
-- `getPage` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/known-issues when idempotence, transactions or a specific client's behavior comes up
-- `getPage` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/configure-clients-to-eliminate-az-networking-costs for zone-aware client IDs in production
+- `fetch` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/tuning-for-performance (per-client settings tables)
+- `fetch` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/known-issues when idempotence, transactions or a specific client's behavior comes up
+- `fetch` https://docs.warpstream.com/warpstream/kafka/configure-kafka-client/configure-clients-to-eliminate-az-networking-costs for zone-aware client IDs in production
 
 If the docs can't be reached, use plain client defaults with the bootstrap server set, say that the code isn't tuned, and link the tuning page.
 
@@ -51,7 +51,7 @@ Then run it (in Claude Code) or give the commands, and confirm records arrive: t
 
 Users often want to point a tool they already use at WarpStream rather than write code.
 
-1. Check the integrations index with the docs MCP (`getPage` https://docs.warpstream.com/warpstream/reference/integrations). It lists tools with a WarpStream-specific page (stream processors, UIs, ETL services and others). If the tool is there, follow its page.
+1. Check the integrations index with the docs MCP (`fetch` https://docs.warpstream.com/warpstream/reference/integrations). It lists tools with a WarpStream-specific page (stream processors, UIs, ETL services and others). If the tool is there, follow its page.
 2. For Kafka Connect and connectors, see the docs' "Manage Connectors" section; WarpStream also runs managed data pipelines inside the Agents, which may replace a separate Connect cluster.
 3. For any other Kafka-compatible tool (kcat, Kafka CLI tools, UIs, Flink or Spark Kafka connectors), the bootstrap server is all it needs for the local cluster: `localhost:9092` (or the port the CLI printed), `PLAINTEXT`, and the Schema Registry URL if the tool uses one (default `http://localhost:9094`). Apply the recommended client settings from step 1 where the tool exposes them.
 4. Check "Protocol and Feature Support" if the tool relies on something specific (transactions, compacted topics, a particular API).

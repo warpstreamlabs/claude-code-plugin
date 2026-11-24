@@ -19,7 +19,7 @@ Both are rate-limited, ephemeral and unsuitable for benchmarks. For CI, the docs
 3. If it isn't installed, explain what will happen and **ask before running anything**:
    - The install script downloads the WarpStream Agent/CLI binary into `~/.warpstream` and prints a line to add to your shell profile:
      `curl https://console.warpstream.com/install.sh | bash`
-   - Alternatives if they'd rather not pipe a script to a shell: Homebrew (`brew tap warpstreamlabs/homebrew-tap && brew install warpstreamlabs/homebrew-tap/warpstream`), a direct binary download, or Docker. Look up the current commands with the docs MCP (`getPage` on https://docs.warpstream.com/warpstream/getting-started/install-the-warpstream-agent) rather than guessing.
+   - Alternatives if they'd rather not pipe a script to a shell: Homebrew (`brew tap warpstreamlabs/homebrew-tap && brew install warpstreamlabs/homebrew-tap/warpstream`), a direct binary download, or Docker. Look up the current commands with the docs MCP (`fetch` on https://docs.warpstream.com/warpstream/getting-started/install-the-warpstream-agent) rather than guessing.
    - If they decline, don't push. Offer Docker, or point them to the install page and continue with concepts or an assessment.
 4. Check the ports are free. Run `warpstream demo -h` (or `playground -h`) to see the port flags and defaults: Kafka (default 9092), Schema Registry (default 9094), and three internal HTTP ports. Check **every** one with `lsof -nP -iTCP:<port> -sTCP:LISTEN` (Linux: `ss -ltnp`); a clash on any of them stops startup. If one is taken (often a local Kafka, Redpanda or an earlier WarpStream run), offer to stop that process (only if the user confirms) or move WarpStream to free ports with the matching override flags.
 
